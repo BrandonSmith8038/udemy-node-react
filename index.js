@@ -22,8 +22,16 @@ app.use(passport.session())
 
 require("./routes/authRoutes")(app)
 
-const PORT = process.env.PORT || 5000;
+let PORT;
 
-app.listen(PORT, () => {
-  console.log(`App Started On Port ${PORT}`)
+if(process.env.NODE_ENV === 'production'){
+  PORT = process.env.PORT
+} else if (process.env.NODE_ENV === 'C9'){
+    PORT = 8081
+} else {
+    PORT = 5000;
+}
+
+app.listen(PORT, process.env.IP, () => {
+  console.log(`App Started On Port ${process.env.IP}:${PORT}`)
 });

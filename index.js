@@ -27,9 +27,9 @@ let PORT;
 if(process.env.NODE_ENV === 'production'){
   PORT = process.env.PORT
 } else if (process.env.NODE_ENV === 'C9'){
-  PORT = 8081
+    PORT = 8081
 } else {
-  PORT = 5000;
+    PORT = 5000;
 }
 
 app.listen(PORT, process.env.IP, () => {

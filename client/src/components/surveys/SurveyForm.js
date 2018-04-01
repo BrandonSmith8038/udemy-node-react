@@ -33,7 +33,7 @@ class SurveyForm extends Component {
     return(
       <div>
         <form
-          onSubmit={this.props.handleSubmit(values => console.log(values))}
+          onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}
         >
           {this.renderFields()}
           <button className="btn-flat waves-effect-light teal right white-text" type="submit">

@@ -1,16 +1,49 @@
 import React, { Component } from 'react'
+import { reduxForm, Field } from 'redux-form'
+import SurveyField from './SurveyField'
 
+const FIELDS = [
+    {label: "Survey Title",name: "title"},
+    {label: "Subject Line",name: "subject"},
+    {label: "Email Body",name: "body"},
+    {label: "Recipient List",name: "emails"},
+  ]
 
 class SurveyForm extends Component {
+  
+  renderFields(){
+    return(
+      FIELDS.map(({name, label}, i) => {
+        return (
+          <Field
+            key={i}
+            label={label}
+            type="text"
+            name={name}
+            component={SurveyField}
+          />
+        )
+      })
+    )
+  }
   
   render(){
     return(
       <div>
-        SurveyForm!
+        <form
+          onSubmit={this.props.handleSubmit(values => console.log(values))}
+        >
+          {this.renderFields()}
+          <button className="btn" type="submit">
+            Submit
+          </button>
+        </form>
       </div>
     )
   }
   
 }
 
-export default SurveyForm
+export default reduxForm({
+  form: 'surveyForm'
+})(SurveyForm)

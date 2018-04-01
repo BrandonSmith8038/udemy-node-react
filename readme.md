@@ -51,7 +51,18 @@ In the `SERVER'S` package.json changed the proxy target to reflect the port of y
 #### Keys
 
 ```
-touch client/config/dev.js
+cd client
+touch .env.development .env.production
+```
+
+In the both files place the stripe publishable as shown
+
+```
+REACT_APP_STRIPE_KEY=""
+```
+
+```
+touch config/dev.js
 ```
 
 In dev.js Fill in the following fields with the required keys

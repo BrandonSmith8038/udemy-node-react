@@ -64,7 +64,8 @@ module.exports = {
   cookieKey: '',
   stripePublishableKey: '',
   stripeSecretKey: '',
-  sendGridKey: ''
+  sendGridKey: '',
+  redirectDomain: ''
 };
 ```
 

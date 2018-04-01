@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Landing = () => {
   return (
@@ -6,7 +6,7 @@ const Landing = () => {
       <h1>EMAILY!</h1>
       Collect Feedback From Your Users
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

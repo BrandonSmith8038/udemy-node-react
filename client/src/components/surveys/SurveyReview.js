@@ -1,30 +1,24 @@
 // Shows users their form inputs for review
 
-import React from 'react'
-import { connect } from 'react-redux'
-import formFields from './formFields'
-import * as actions from '../../actions'
-
+import React from 'react';
+import { connect } from 'react-redux';
+import formFields from './formFields';
+import * as actions from '../../actions';
 
 const SurveyReview = ({ onCancel, formValues, submitSurvey }) => {
-  
   const renderFields = formFields.map(({ label, name }, i) => {
     return (
       <div key={i}>
-        <label>{label}</label>  
-        <div>
-        {formValues[name]}
-        </div>
+        <label>{label}</label>
+        <div>{formValues[name]}</div>
       </div>
-    )
-  })
-  
-  return(
+    );
+  });
+
+  return (
     <div>
       <h5>Please Review Your Entries</h5>
-      <div>
-        {renderFields}
-      </div>
+      <div>{renderFields}</div>
       <div style={{ marginTop: '15px' }}>
         <button
           className="yellow white-text darken-3 btn-flat"
@@ -41,13 +35,13 @@ const SurveyReview = ({ onCancel, formValues, submitSurvey }) => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
-    formValues: state.form.surveyForm.values,
-  }
+    formValues: state.form.surveyForm.values
+  };
 }
 
-export default connect(mapStateToProps, actions)(SurveyReview)
+export default connect(mapStateToProps, actions)(SurveyReview);

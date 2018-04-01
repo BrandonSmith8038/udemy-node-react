@@ -1,6 +1,6 @@
-const keys = require('../../config/keys')
+const keys = require('../../config/keys');
 
-module.exports = (survey) => {
+module.exports = survey => {
   return `
     <html>
       <body>
@@ -21,5 +21,5 @@ module.exports = (survey) => {
         </div>
       </body>
     </html>
-  `
-}
+  `;
+};
